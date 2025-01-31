@@ -13,7 +13,7 @@ class _BouncyBallState extends State<BouncyBall>
   @override
   void initState() {
     super.initState();
-    setSize(200, 310);
+    setSize(140, 219);
   }
 
   @override
@@ -30,8 +30,8 @@ class _BouncyBallState extends State<BouncyBall>
               ? extendAnimation.value
               : bounceAnimation.value;
           return Container(
-            width: extendAnimation.isDismissed ? 200 : size,
-            height: extendAnimation.isDismissed ? 200 : size,
+            width: extendAnimation.isDismissed ? 140 : size,
+            height: extendAnimation.isDismissed ? 140 : size,
             decoration: BoxDecoration(
               color: Colors.amber[900],
               shape: BoxShape.circle,

@@ -16,12 +16,15 @@ mixin BouncyAnimationMixin<T extends StatefulWidget>
     extendAnimation = Tween<double>(begin: start, end: end).animate(
       CurvedAnimation(
         parent: extendController,
-        curve: Curves.easeInOut,
+        curve: const Cubic(0.23, 0.86, 0.29, 1),
       ),
     );
 
     bounceAnimation = Tween<double>(begin: end, end: start).animate(
-      CurvedAnimation(parent: bounceController, curve: CustomBounceCurve()),
+      CurvedAnimation(
+        parent: bounceController,
+        curve: CustomBounceCurve(),
+      ),
     );
     setState(() {});
   }
@@ -31,7 +34,7 @@ mixin BouncyAnimationMixin<T extends StatefulWidget>
     super.initState();
 
     extendController = AnimationController(
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 380),
       vsync: this,
     );
     bounceController = AnimationController(
