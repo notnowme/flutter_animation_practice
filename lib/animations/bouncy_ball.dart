@@ -24,7 +24,7 @@ class _BouncyBallState extends State<BouncyBall>
         extendController.forward();
       },
       child: AnimatedBuilder(
-        animation: Listenable.merge([extendAnimation, bounceController]),
+        animation: Listenable.merge([extendAnimation, bounceAnimation]),
         builder: (context, child) {
           double size = extendController.isAnimating
               ? extendAnimation.value
